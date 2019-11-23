@@ -1,1 +1,2 @@
-# sqlcheatcodes
+# MICROSOFT SQL SERVER SCRIPTS
+## The purpose of all sql scripts that are available here are aimed to give you a very basic understanding of Microsoft SQL Server concepts along with their functionality on data retrieving.
