@@ -1,0 +1,2010 @@
+1.What is data
+
+ Data is nothing but rawfact. 
+ Rawfact is nothing but the collection of charecters,numbers,diagrams,symbols and special charaecters.
+ Data never provide the meaningful information to the user.
+
+2.What is a database
+
+  A database is a collection of information which is well organized so that it can be easily accessed,managed and updated.
+
+
+3.What is  DBMS
+  
+  A database management system (DBMS) is a system  software for creating and managing databases.
+  DBMS allows a systematic approach for creating ,updating , retrieving and managing the data to the users and programmers.
+
+
+4.What are type of DBMS
+
+ There are 6 types of DBMS models following
+  1. File managememt system.
+  2. Hierarchical management system.
+  3. Network management system.
+  4. Relational database management system (RDBMS)
+  5. Object relational database management system (ORDBMS)
+  6. Object oriented realtional database management system (OORDBMS)
+
+
+5.What is RDBMS;what are top 6 RDMS available in market
+
+  RDBMS (Relational database management system) in this the data will be stored in the format of tables and tables consists collection  of fields and records.
+  Most commercial RDBMS  uses the language called SQL for management of data.
+ 
+  Top 6 RDBMS available in the market are the following (According to 2017)
+
+    DBMS Software                                                                     Highlighted Features
+
+    FileMaker                                                                         Painless integration
+    DB2                                                                               Multiple product iterations
+    Microsoft Access                                                                  Easy app building for non-developers
+    Microsoft SQL Server                                                              Cost effective business intelligence
+    MySQL                                                                             Extensive online support
+    Oracle Database 12c                                                               Pluggable database
+
+
+6.What is normalization and why we need it?What are normal forms,listout 4 normal forms with examples
+
+  Normalization: Data normalization is the process of organizing the data to minimize data redundancy (data duplication), which in turn ensures the data intigrity.
+
+  Purpose: The purpose of normalization is to store each row of data only once, to avoid data anomalies.
+
+  Basic Normalization forms:  1st NF talks about atomic values and non-repeating groups.
+                              2nd NF enforces that a non-Key attribute should belong to entire Key attribute.
+                              3rd NF makes sure that there should be no transitive dependency between a non-Key and a Key attribute.  
+
+
+7.OLTP vs OLAP ; Examples for OLTP,OLAP systems in the market;when to choose OLTP and when to choose OLAP for your project data maintanance
+
+   OLTP (On-line Transaction Processing) is characterized by a large number of short on-line transactions (INSERT, UPDATE, DELETE). The main emphasis for OLTP systems is put on very fast query processing, maintaining data integrity in multi-access environments and an effectiveness measured by number of transactions per second. In OLTP database there is detailed and current data, and schema used to store transactional databases is the entity model (usually 3NF). 
+
+- OLAP (On-line Analytical Processing) is characterized by relatively low volume of transactions. Queries are often very complex and involve aggregations. For OLAP systems a response time is an effectiveness measure. OLAP applications are widely used by Data Mining techniques. In OLAP database there is aggregated, historical data, stored in multi-dimensional schemas (usually star schema). 
+
+   Hyperion Solutions by Oracle
+   Business Objects by SAP
+   Cognos by IBM
+
+
+      Category                                      OLTP ( online transaction processing)                                      OLAP( online analytical processing)
+
+Data Source	                                 Operational information of the application. 
+                                                 Generally this processes are the source of the data.	                         Historical and archive data.
+
+
+Focus	                                        Updating data.	                                                               Reporting and retrieval of information.
+
+
+Applications                      	        Management, operational, web services, client-server.	                      Management Systems. Reporting, decision.
+
+Users	                                        Common person. Staff.	                                              Managers, executives, data scientists, marketers.
+
+Data task	                                Operational tasks. Business tasks.	                                        Reporting and data analysis.
+
+Data Refresh	                    Insert, update and delete operations. They are performed fast. Immediate results.	Refreshing of data with huge data sets. Takes                                                                                                                          time and is sporadic.
+
+Data Model	                                Entity-relantionship on databases.	                                   One or multi-dimensional data.
+
+Schema	                            Normalized schemas. Many tables and relationships.	                                  Star, snowflake and constellation schema.                                                                                                                            Fewer tables not normalized.
+
+Horizon	                                        Day-to-day, weeks, months.	                                                Long time data.
+
+
+Queries	                                  Simple, returning the results expected for the system activity.	       Complex queries of data in order to aggregate                                                                                                                             information for reporting.
+
+
+Speed	                                   Fast. Requires some indexes on large tables.	                 Slow. Depending on the amount of data. Requires more indexes.
+
+Space	                                   Operational data stored, tipically small.	              Large data sets of historical information. Large storage needed.
+
+
+
+8.What are ACID properties, list out them with examples;why a RDBMS need to satisfy those
+
+  Following are the ACID properties for Database.
+
+  Atomicity –   Transactions may be set of SQL statements. If any of statement fails then the entire transaction fails. The transaction follows all or nothing rule.
+
+  Consistency – This property says that the transaction should be always in consistent state. If any transaction is going to affect the database’s consistent state                 then the transaction could be rolled back.
+
+  Isolation –   This property says that one transaction cannot retrieve the data that has been modified by any other transaction until it’s completed.
+
+  Durability – When any transaction is committed then it must be persisted. In the case of failure only committed transaction will be recovered and uncommitted                transaction will be rolled back.
+
+
+
+9.What are the builtin databases you will get when sql server installed;what is the purpose of each
+
+  Built-in databases:
+
+    1.Master DB : It controls the all other databases, controls the user connections and which controls memory and allocates session ID. it's  DEFAULT database.
+  
+    2.Model DB : Which is acts as template for new databases.
+
+    3.temp DB : In this temporary memory system will store all the temp information like.....temp tables,temp views,temp procedures,temkp functions like all database 
+                objects. which is used for tuning and temporary work sapace.
+
+    4.msDB : It will store the all backup files information which was created by the user .(alerts,jobs and auditing purposes)
+
+                                                                                             
+10.What are Codd rules, why these rules to be satisfied for a RDBMS;how many rules were satisfied by each RDMS( top 5) in the market
+   
+   Codd's Rule
+E.F Codd was a Computer Scientist who invented Relational model for Database management. Based on relational model, Relation database was created. Codd proposed 13 rules popularly known as Codd's 12 rules to test DBMS's concept against his relational model. Codd's rule actualy define what quality a DBMS requires in order to become a Relational Database Management System(RDBMS). Till now, there is hardly any commercial product that follows all the 13 Codd's rules. Even Oracle follows only eight and half out(8.5) of 13. The Codd's 12 rules are as follows.
+
+Rule zero
+
+This rule states that for a system to qualify as an RDBMS, it must be able to manage database entirely through the relational capabilities.
+
+Rule 1 : Information rule
+
+All information(including metadata) is to be represented as stored data in cells of tables. The rows and columns have to be strictly unordered.
+
+Rule 2 : Guaranted Access
+
+Each unique piece of data(atomic value) should be accesible by : Table Name + primary key(Row) + Attribute(column).
+
+NOTE : Ability to directly access via POINTER is a violation of this rule.
+
+Rule 3 : Systemetic treatment of NULL
+
+Null has several meanings, it can mean missing data, not applicable or no value. It should be handled consistently. Primary key must not be null. Expression on NULL must give null.
+
+Rule 4 : Active Online Catalog
+
+Database dictionary(catalog) must have description of Database. Catalog to be governed by same rule as rest of the database. The same query language to be used on catalog as on application database.
+
+Rule 5 : Powerful language
+
+One well defined language must be there to provide all manners of access to data. Example: SQL. If a file supporting table can be accessed by any manner except SQL interface, then its a violation to this rule.
+
+Rule 6 : View Updation rule
+
+All view that are theoretically updatable should be updatable by the system.
+
+Rule 7 : Relational Level Operation
+
+There must be Insert, Delete, Update operations at each level of relations. Set operation like Union, Intersection and minus should also be supported.
+
+Rule 8 : Physical Data Independence
+
+The physical storage of data should not matter to the system. If say, some file supporting table were renamed or moved from one disk to another, it should not effect the application.
+
+Rule 9 : Logical Data Independence
+
+If there is change in the logical structure(table structures) of the database the user view of data should not change. Say, if a table is split into two tables, a new view should give result as the join of the two tables. This rule is most difficult to satisfy.
+
+Rule 10 : Integrity Independence
+
+The database should be able to conforce its own integrity rather than using other programs. Key and Check constraints, trigger etc should be stored in Data Dictionary. This also make RDBMS independent of front-end.
+
+Rule 11 : Distribution Independence
+
+A database should work properly regardless of its distribution across a network. This lays foundation of distributed database.
+
+Rule 12 : Nonsubversion rule
+
+If low level access is allowed to a system it should not be able to subvert or bypass integrity rule to change data. This can be achieved by some sort of looking or encryption.
+
+
+
+
+
+13.What are the types of commands available in sql server; List all with examples
+
+   Commands available in SQL server :
+
+   1.DDL commands : create , alter , drop , rename and truncate
+   2.DML commands : insert , update , delete and merge
+   3.DQL/DRL command : select
+   4.TCL commands : savepoint, commit and rollback
+   5.DCL commands : grant and revoke
+
+14.List out the clauses available in sql server with examples
+
+   Clauses in SQL server : from , where , top n, group by ,order by, output, select , having , cube , rollup , into , over , option , with,join , on, output
+
+
+15.What is logical query processing order of a select query
+
+   The logical query processing order of a SELECT query as follows...
+
+   A logical query processing is the conceptual flow an order of the clauses knowing that how sql server evaluate those clauses while executing a query.
+
+   1. FROM
+   2. ON
+   3. OUTER
+   4. WHERE
+   5. GROUP BY
+   6. CUBE | ROLLUP
+   7. HAVING
+   8. SELECT
+   9. DISTINCT
+   10 ORDER BY
+   11. TOP
+
+        1 FROM <table_operators: JOIN, APPLY, PIVOT, UNPIVOT>
+        2 WHERE <predicate>
+        3 GROUP BY <definition_of_grouping_sets>
+        4 HAVING <predicate>
+        5 SELECT
+            5.1 SELECT list
+            5.2 DISTINCT
+        6 ORDER BY <order_by_list>
+        7 TOP / OFFSET-FETCH
+
+16.what is diff between applying filter using where and having clauses
+
+                  Where clause                                                                                       Having clause
+ 
+    1. It's used to filtering the data before grouping the data in a table.         1.It's used to filter the data after grouping the data in a table .
+
+    2. If the column that we choose for filtering is associated with aggegate       2. Here we use having clause on the column that associated with aggregate function.
+        function then we can't use WHERE clause.
+ 
+    3. without group by we can use where clause.                                    3. without group by we can't use having clause.
+
+    4. It'll execute individual rows in a table.                                    4. It'll execute group of rows along with the group by clause in a table.
+
+
+17.What are different integrities supported by sql server and how ?
+
+   Integrities that are supported by SQL server are:
+                                                       
+               Integrities
+                     
+                      Declarative integrity----this can be achieved with the help of CONSTRAINTS.
+                        
+                             Entity integrity----primary key, unique and not null.
+                             Referential integrity-------foreign key.
+                             Domain integrity-----------default,check.
+                                 
+                       procedural integrity-----this can be achieved with the help of TRIGGERS.
+                                                           
+
+18.What are the datatypes available in sql server;diff between numeric and decimal,real and float, char and varchar, varchar and nvarchar,text and varchar
+
+  Datatypes available in SQL server : 
+   
+       tinyint-------------1 byte
+       smallint------------2 byte
+       int-----------------4 byte
+       bigint--------------8 byte
+
+       numaric(p,s)
+       decimal(p,s)
+   
+
+   non-uni code:   1 char=1 byte
+ 
+       char---------------8000 bytes ---------maxlen----8000 chars
+       varchar-----------2 gb----------maxlen-----8000 chars
+       text--------------2gb
+
+   uni-code :      1 char=2 bytes
+
+       nchar------------8000 bytes-----------maxlen------4000 chars
+       nvarchar---------2 gb----------------maxlen-------4000 chars
+       ntext------------2 gb
+
+       date
+       time
+       datetime
+       smalldatetime
+       datetime2  
+
+       small money--------------4 bytes
+       money--------------------8 bytes
+   
+       Binary
+       Varbinary
+       Images
+
+       sql_varient
+       table 
+       xml
+       cursor
+
+19.How to create user defined datatype,whtz it use 
+
+   By using SSMS:
+            > Object explorer
+            > database (any)
+            > programmability
+            > expand type
+            > user defined datatypes----Right click on it and give the respective charecteristics and create user defined datatype.
+
+   Using Transact-SQL
+          To create a user-defined data type alias
+      1.Connect to the Database Engine.
+      2.From the Standard bar, click New Query.
+      3.Copy and paste the following example into the query window and click Execute. This example creates a data type alias based on the system-supplied 
+        varchar data type. The ssn data type alias is used for columns holding 11-digit social security numbers (999-99-9999). The column cannot be NULL.
+
+        CREATE TYPE ssn  
+        FROM varchar(11) NOT NULL ;  
+
+
+20.What is meant by constraint, why we need constraints,what are the types of constarints available in sql sever;write examples to create each at table,column level 
+
+   Constraint: constraints are the set of rules which restrict the data on table in order to provide data integrity.
+ 
+             Column level constraints : Limits only column data.
+             Table level constraints : (Triggers) Limits only table data.
+  Most used constraints are :
+       1. unique
+       2. not null
+       3. primary key
+       4. foreign key
+       5. check
+       6. default
+
+
+21.What are types of keys in RBMS;What is diff between keys and constraints
+
+   Types of keys in RDBMS:
+  
+     1.Primary key : primary key is a column or set of cloumns in a table which are uniquly identifies the rows in a table.
+
+     2. Foreign key: Forieng key is a set of columns in a table which are pointing to primary key ion another table and maintain a relation between the data in RDBMS.
+
+     3. super key: A super key is a column or columns in a table that are uniquly identifies the rows(touples) in a table.
+
+     4. Candidate key : A candidate key must be selected from the set of super keys but it shouldn't have any redundent attributes. that is the reason it's also called 
+                        'minimal super key'. 
+
+     5. Alternate key : Out of all candidate keys one must be selected as a primary key and remaining all are considered to be alternate keys.
+
+     6. Composite key : A key that consists more than one attributes in a table which are uniquely identifies that data in a table.
+
+
+     Differences between keys and constraints are :
+  	
+          Unique Key constraints:
+
+     Unique key constraint will provide you a constraint like the column values should retain uniqueness.
+     It will create "UNIQUE non-clustered index by default"
+     Any number of unique constraints can be added to a table.
+     It will allow only one null value in the column.
+
+      ALTER TABLE table_name ADD CONSTRAINT UNIQUE_CONSTRAINT UNIQUE (column_name1, column_name2, ...)
+
+          Primary Key: (unique + not null)
+
+     Primary key will create column data uniqueness in the table.
+     Primary key will create "UNIQUE clustered index by default"
+     Only one Primay key can be created for a table
+     Multiple columns can be consolidated to form a single primary key
+     It wont allow null values.
+
+
+      ALTER TABLE table_name ADD CONSTRAINT KEY_CONSTRAINT PRIMARY KEY (column_name)
+ 
+
+22.What are joins;why we need it,what are they;list out each with example
+
+   Joins: Join means it combines the columns of one or more tables by using the common values to each.
+ 
+   Why we need it: In relational DBMS the data must be stored in diffrent tables so inorder to get data from different tables we need JOINS.
+  
+   What are they : Joins can be classified based on their behavior are follows..
+
+             1.Inner join or  join : which gets the "common data" from one or more tables.
+
+             2.Left outer join or Left join : which gets the "Common data + the data from left table " from one or more tables.
+
+             3.Right outer join or Right join: which gets the "Common data + the data from right side of the table " from one or more tables.
+ 
+             4.Full outer join or Full join : which gets the "complete data from both tables"
+
+             5.Cross join : which gets the "cartesian" data from one or more tables .
+
+             6.Self join: A self join is a join in which a table is joined with itself (which is also called Unary relationships), especially when the table has a                           FOREIGN KEY which references its own PRIMARY KEY. To join a table itself means that each row of the table is combined with itself and with                           every other row of the table.
+
+            
+              Syntax:
+
+               SELECT <columns list>
+               FROM <table 1> as <alias name 1>
+               join|left join|right join|full join|self join  <table 2> as <alias name 2>
+               ON <join condition>
+               WHERE < condition >
+
+23.Will join hamper the performance?if so when ; is outer is must to specify while writing the join query;dif between cross join with where clause and inner join with the same condition (what was used for where clause)
+
+Will joins hamper the performance????
+
+    First, you should understand that JOINs don't necessarily hurt performance. If you have proper indexes they can work very well.
+
+    The order in which the tables in your queries are joined can have a dramatic effect on how the query performs. If your query happens to join all the large tables       first and then joins to a smaller table later this can cause a lot of unnecessary processing by the SQL engine.
+
+    For best practise USE SMALLER TABLE DATA FIRST JOIN LARGER TABLE DATA NEXT this will makes everything works well.
+   
+    The only caveat is the Option FORCE ORDER which will force joins to happen in the exact order you have them specified. but it will impact on performance.
+
+is outer is must to specify while writing the join query??
+
+    No, you can write left outer join |right outer join | full outer join as left join |right join|full join..
+
+dif between cross join with where clause and inner join with the same condition (what was used for where clause)?
+
+
+     Cross Joins produce results that consist of every combination of rows from two or more tables. That means if table A has 6 rows and table B has 3 rows, a cross      join will result in 18 rows. There is no relationship established between the two tables – you literally just produce every possible combination.
+
+     With an inner join, column values from one row of a table are combined with column values from another row of another (or the same) table to form a single row of      data.
+
+     If a WHERE clause is added to a cross join, it behaves as an inner join as the WHERE imposes a limiting factor.
+
+
+
+24.In a left join query-What is the diff between applying filter condition on left table column and right table column ( at on conditional block ) ,what you have observed and what need to be minded when you write left or right join 
+
+
+
+  SELECT t1.f2 
+  FROM   t1 
+  LEFT JOIN t2 
+  ON t1.f1 = t2.f1 AND cond2 AND t2.f3 > something 
+
+  Does not give the same results as :
+
+  SELECT t1.f2 
+  FROM   t1 
+  LEFT JOIN t2 
+  ON t1.f1 = t2.f1 AND cond2 
+  WHERE  t2.f3 > something 
+
+  The ON clause is used when the join is looking for matching rows. The WHERE clause is used to filter rows after all the joining is done.
+
+what need to be minded when you write left or right join ??
+
+  We need to understand the which part of the table data we required and we can apply filtering conditions depending up on the requirement.
+
+
+25.What is a subquery;why we need it;how many times it will exexutes;what all places we can use subquery;will they impact the query execution time/performance
+                                                                                                         *not really but it depends 
+                                         
+   A subquery is a SQL query nested inside a larger query.
+
+   A subquery may occur in :
+    - A SELECT clause
+    - A FROM clause
+    - A WHERE clause
+                    1. The subquery can be nested inside a SELECT, INSERT, UPDATE, or DELETE statement or inside another subquery.
+                    2. A subquery is usually added within the WHERE Clause of another SQL SELECT statement.
+                    3. You can use the comparison operators, such as >, <, or =. The comparison operator can also be a multiple-row operator, such as IN, ANY, or ALL.
+                   4.  A subquery is also called an inner query or inner select, while the statement containing a subquery is also called an outer query or outer                               select.
+                   5.  The inner query executes first before its parent query so that the results of an inner query can be passed to the outer query.
+
+     Single Row Subqueries
+     ---------------------
+
+      A single row subquery returns zero or one row to the outer SQL statement. You can place a subquery in a WHERE clause, a HAVING clause, or a FROM clause of a            SELECT statement.
+
+     WHERE CLAUSE:
+     ------------
+     SELECT agent_name, agent_code, phone_no
+     FROM agents
+     WHERE agent_code = 
+                       (SELECT agent_code 
+                         FROM agents
+                          WHERE agent_name = 'Alex');
+
+     Subqueries in a HAVING clause:
+    --------------------------------
+
+      SELECT AVG(ord_amount),COUNT(agent_code),agent_code
+      FROM orders 
+      GROUP BY agent_code
+      HAVING AVG(ord_amount)=
+                             (SELECT AVG(ord_amount) 
+                                FROM orders
+                               WHERE agent_code='A008');
+
+     Subqueries in a FROM clause:
+    -------------------------------
+      SELECT item_id
+      FROM  
+           (SELECT item_id   
+             FROM FOODS    
+             WHERE item_id<4)
+
+
+      Multiple Row Subqueries
+     -------------------------
+
+       Multiple row subquery returns one or more rows to the outer SQL statement. You may use the IN, ANY, or ALL operator in outer query to handle a subquery that        returns multiple rows.
+
+
+       Using IN operator with a Multiple Row Subquery
+       -----------------------------------------------
+
+          SELECT ord_num,ord_amount,ord_date,
+                 cust_code, agent_code
+          FROM orders
+          WHERE agent_code IN(
+                                 SELECT agent_code FROM agents
+                                 WHERE working_area='Bangalore');
+
+
+       Using NOT IN operator with a Multiple Row Subquery
+      ----------------------------------------------------
+      
+          SELECT ord_num,ord_amount,ord_date,
+                 cust_code, agent_code
+          FROM orders
+          WHERE agent_code NOT IN(
+                                 SELECT agent_code FROM agents
+                                 WHERE working_area='Bangalore');
+
+
+       Using ANY with a Multiple Row Subquery
+       -----------------------------------------
+
+        SELECT agent_code,agent_name,working_area,commission
+        FROM  agents
+        WHERE agent_code=ANY(
+                                SELECT agent_code FROM customer
+                                WHERE cust_country='UK');
+
+       
+        Multiple Column Subqueries
+       -----------------------------
+
+        You can write subqueries that return multiple columns. The following example retrieves the order amount with the lowest price, group by agent code.
+
+
+       select ord_num, agent_code, ord_date, ord_amount
+       from orders
+       where(agent_code, ord_amount) IN
+                                       (SELECT agent_code, MIN(ord_amount)
+                                         FROM orders 
+                                         GROUP BY agent_code);
+
+       
+         Subqueries using DISTINCT
+        ---------------------------
+
+          In this section, we are discussing the usage of DISTINCT clause in a subquery.
+
+           SELECT ord_num,ord_amount,ord_date,
+                    cust_code, agent_code
+           FROM orders
+           WHERE agent_code=(
+                              SELECT DISTINCT agent_code
+                              FROM orders WHERE cust_code='C00005');
+
+ Which is faster subquery or join?
+
+     The good thing in sub-queries is that they are more readable than JOIN s: that's why most new SQL people prefer them; it is the easy way; but when it comes to          performance, JOINS are better in most cases even though they are not hard to read too. ... a class of subqueries that can not be rewritten using joins
+
+
+26.What is a derived table;when u require it;how many times derived table will execute;subquery vs derived table;what is its imapct on performance
+                                               *only one time
+                                          
+   When and How to Apply SQL Server Derived Tables
+
+   A derived table is a table expression that appears in the FROM clause of a query. You can apply derived tables when the use of column aliases is not possible    because another clause is processed by the SQL translator before the alias name is known.
+
+   Example 1 shows an attempt to use a column alias where another clause is processed before the alias name is known.
+
+   EXAMPLE 1 (EXAMPLE OF AN ILLEGAL STATEMENT)
+
+   Get all existing groups of months from the enter_date column of the works_on table:
+
+     SELECT MONTH(enter_date) as enter_month
+     FORM month_table
+     GROUP BY enter_month
+
+ 
+
+    The result is: Error because the enter_month is not specified and not available in select statement,
+                   The reason for the error message is that the GROUP BY clause is processed before the corresponding SELECT list, and the alias name enter_month is                    not known at the time the grouping is processed.
+
+     By using a derived table that contains the preceding query (without the GROUP BY clause), you can solve this problem, because the FROM clause is executed before      the GROUP BY clause, as shown in Example 2.
+
+     EXAMPLE 2
+
+       SELECT enter_month 
+       FROM (SELECT MONTH(enter_date) as enter_month
+             FROM month_table ) AS M
+       GROUP BY enter_month
+
+       Now it will work because the derived table works as a temporary resuklt set and holding the column name 'enter_month'
+
+SUBQUERY VS DERIVED TABLE :
+
+       Derived tables
+       ---------------
+
+       A derived table is basically a subquery, except it is always in the FROM clause of a SQL statement. The reason it is called a derived table is because it        essentially functions as a table as far as the entire query is concerned.
+
+       But, remember that a derived table only exists in the query in which it is created. So, derived tables are not actually part of the database schema because they are not real tables.
+
+     
+27.What is correlated subquery;when we need it;how many times it will execute;subquery vs correlated subquery;what is correlated subquery impact on performance
+
+  Correlated Subqueries
+ -----------------------
+
+  SQL Correlated Subqueries are used to select data from a table referenced in the outer query. The subquery is known as a correlated because the subquery is related     to the outer query. In this type of queries, a table alias (also called a correlation name) must be used to specify which table reference is to be used.
+
+
+  The correlated subquery is executed 10 times, once for each row in R. But the answer may be looking for the total number of rows examined by the query (assuming no    indexes)
+
+   Difference between SUBQUERY and CORRELATED SUBQUERY
+  -----------------------------------------------------
+ 
+  A subquery is a select statement that is embedded in a clause of another select statement. 
+
+  A Correlated subquery is a subquery that is evaluated once for each row processed by the outer query or main query.
+
+
+  performance : It slow down the performance of the query.
+  ------------
+
+
+28.What is a case statement;can we write nested case statement-give an example;how many levels/case statements can be written in a single select; What happens,In a case statement - what if you are comparing some datatype value and returning some other datatype value (where there is no possibility of implicit conversion ) ; what is the alternative way to acheive case statement results
+
+
+
+29.What is a temp table;types of temp tables;local vs global temp tables;why do we need it;pros and cons; what is the impact on performance;subquery vs derived table vs local temp table vs global temp table
+
+
+   Introduction
+   ------------
+    SQL Server provides the concept of temporary table which helps the developer in a great way. These tables can be created at runtime and can do the all kinds of     operations that one normal table can do. But, based on the table types, the scope is limited. These tables are created inside tempdb database.
+
+   Different Types of Temporary Tables
+   -----------------------------------
+   SQL Server provides two types of temp tables based on the behavior and scope of the table. These are:
+
+       Local Temp Table
+       Global Temp Table
+
+   Local Temp Table
+  -------------------
+
+   Local temp tables are only available to the current connection for the user; and they are automatically deleted when the user disconnects from instances. Local    temporary table name is stared with hash ("#") sign.
+
+
+    CREATE TABLE #LocalTempTable(
+    UserID int,
+    UserName varchar(50), 
+    UserAddress varchar(150))
+
+    This is because the scope of Local Temporary table is only bounded with the current connection of current user.
+
+   Global Temp Table
+   -----------------
+
+   Global Temporary tables name starts with a double hash ("##"). Once this table has been created by a connection, like a permanent table it is then available to any     user by any connection. It can only be deleted once all connections have been closed.
+
+   CREATE TABLE ##NewGlobalTempTable(
+   UserID int,
+   UserName varchar(50), 
+   UserAddress varchar(150))
+
+   Global temporary tables are visible to all SQL Server connections. When you create one of these, all the users can see it.
+
+When to Use Temporary Tables?
+             Below are the scenarios where we can use temporary tables:
+
+        1.When we are doing large number of row manipulation in stored procedures.
+        2.This is useful to replace the cursor. We can store the result set data into a temp table, then we can manipulate the data from there.
+        3.When we are having a complex join operation.
+
+Points to Remember Before Using Temporary Tables
+
+       1.Temporary table created on tempdb of SQL Server. This is a separate database. So, this is an additional overhead and can causes performance issues.
+       2.Number of rows and columns need to be as minimum as needed.
+       3.Tables need to be deleted when they are done with their work.
+
+      Alternative Approach: Table Variable
+
+
+30.What is a table variable;why do we need it;pros and cons; what is the impact on performance;subquery vs derived table vs temp table vs table variable
+
+
+    Table variables are laid out like tables. They are partially stored both in the memory and in the disk.
+
+    They can be declared in batch or stored procedure. Unlike Temporary Tables, they cannot be dropped explicitly. Once the batch execution is finished, the Table     Variables are dropped automatically.
+ 
+    The Table Variables are stored in both the memory and the disk in the tempdb database.
+
+    The structure of "Temporary Tables" can be created even after its creation. Thus, we can use DDL statements like ALTER, DROP and CREATE as shown in the below-    mentioned example. In the example we have created a Temporary Table named as Employee. In this we will add an Address column and then finally drop the table.
+
+    The structure of Table Variables cannot be changed once they are created. Thus, it means that DDL commands cannot be run in Table Variables.
+
+    Temporary Table---------------------------------------------------------------------------They are not allowed in the user-defined functions.
+
+    Table Variable----------------------------------------------------------------------------The table variables can be used in user-defined functions.
+
+    Temporary Table------------------------------------------------------------------------They support the explicit transactions that are defined by the user.
+
+    Table Variable-----------------------------------------------------They do not participate in the transactions that have been explicitly defined by the user.
+
+    Temporary Table------------------------------------Local and Global Temporary Tables support creation of indexes on them in order to increase the performance.
+
+    Table Variable-----------------------------------------------------------------------------Table Variables do not allow creation of indexes on them.
+
+    Temporary Tables------------------------Since the Temporary Tables are physical tables, while reading from the table, SQL Optimizer puts a read lock on the table.
+
+    Table Variable-------------------------------Since the Table Variables are partially stored in the memory, they cannot be accessed by any other user or process                                                  that the current user. Therefore, no read lock is put on the Table Variable.
+
+    conclusion: The Temporary Table and Table Variables are both strong and weak at the same time. Both the Table Variables and Temporary Variables are extremely                 useful for developers and administrators. The users need to choose the correct solution according to the situation.
+
+ Temp tables,
+          IO Operation - HIGH
+          Explicit Indexing is allowed
+          Constraints are allowed
+          Need not create or declare, we can use the INTO clause to create this object.         
+          Reusable across the batch but with current session
+          Recommended when the data is huge & if there is any manipulation on the result
+          Supports concurrency users
+          Bit slower than table variables.
+ 
+ 
+Table variables,
+          IO Operation – LOW or NA
+          Explicit Indexing not allowed – (Primary/Unique key can create index)
+          Constraints are allowed
+          Have to declare the variable
+          Only used by the current batch scope
+          Recommended when the data is less & if there is any manipulation on the result
+          Supports concurrency users
+          Faster when the number of records is less
+ 
+ 
+Derived tables,
+          IO Operation – NA
+          Declaration – NA
+          Explicit Indexing – NA
+          Constraints - NA
+          Only on the current query(line)
+          If it is not reusable data then we can go for it
+          Recommended for inline quires
+          Supports concurrency users
+
+
+31.What is a CTE;why do we need it;what are types of CTE- when to use what type;pros and cons; what is the impact on performance;subquery vs derived table vs temp table vs table variable vs CTE; 
+
+   CTE:
+
+      The CTE is an abbreviation of “Common Table Expression.” CTE was introduced in SQL Server. It works as a temporary result set that is defined within the       execution scope of a single select, insert, update, delete statements. CTE is typically the result of complex sub queries. Similar to temporary tables CTE       doesn’t store as an object; the scope is limited to the current query. CTE improves readability and ease in maintenance of complex queries and sub-queries.
+
+   What is A CTE?
+
+       A CTE is a temporary view that exists only in the scope of running query. A CTE is similar to a view but a CTE is embedded into the query.
+       CTEs can be used in Stored Procedures, User Define Functions (UDFs), Triggers and Views but not in Indexed Views.
+
+    * Non recurssive CTE
+
+         WITH CTE(Emp_ID, Emp_Name, Project_Name)  
+         AS  
+           (  
+             SELECT e.Emp_Id, e.EmployeeName, p.Project_NameFROMdbo.Employee e INNERJOIN dbo.Project p ON e.Emp_Id = p.Project_Id  
+           )  
+         SELECT * FROM CTE  
+
+    * Recurssive CTE
+
+        DECLARE @Min int;  
+        DECLARE @Max int;  
+        SET @Max = 10;  
+        SET @Min = 1;  
+  
+        WITH Sequence_ AS  
+  
+                    (  
+                      SELECT @Min ASnum UNIONALL SELECT num + 1 FROM Sequence_ WHERE num + 1 <= @Max  
+                    )  
+        SELECTnumFROM Sequence_  
+
+  When to use CTE:
+
+        One example, if you need to reference/join the same data set multiple times you can do so by defining a CTE. Therefore, it can be a form of code re-use.
+
+     A CTE can be used to:
+
+        Create a recursive query. For more information, see Recursive Queries Using Common Table Expressions.
+        Substitute for a view when the general use of a view is not required; that is, you do not have to store the definition in metadata.
+        Enable grouping by a column that is derived from a scalar subselect, or a function that is either not deterministic or has external access.
+        Reference the resulting table multiple times in the same statement.
+
+32.What is an Identity,Top,GUID,sequence in sql server
+
+
+
+
+33.Listout all aggregate functions with examples;what aggregate functions ignores null values;what is the impact of these on performance
+
+   List of all Aggregate functions:  All aggregate functions except COUNT(*) and GROUPING ignore nulls.
+   
+   1. AVG : It returns the avg values in a group. NULL values are ignored.  Ex: AVG(salary)
+        
+   2. SUM : It returns the sum of the values in the expression. applied on numaric columns only. NULL values are ignored. Ex : SUM(salary)
+
+   3. MAX : It returns the maximum value in the expression. Ex : MAX (salary)----MAX ignores any null values.
+  
+   4. MIN : It returns the minimum value in the expression. Ex : MIN (salary)-----MIN ignores any null values.
+
+   5. COUNT(*)| COUNT(column name ) : It returns the number of items in a group. Ex: COUNT(*) | COUNT( column name) . It retunrs INT values.
+
+   6. COUNT_BIG : It returns the number of items in a group. Ex: COUNT_BIG(expression)  . It returns BIGINT only.
+
+   7. CHECKSUM : Returns the checksum value computed over a row of a table, or over a list of expressions. CHECKSUM is intended for use in building hash indexes. 
+                
+                 CHECKSUM applied over any two lists of expressions returns the same value if the corresponding elements of the two lists have the same type and are                     equal when compared using the equals (=) operator. 
+                                                                      Ex: CHECKSUM( expression)----return type : int
+
+   8. CHECKSUM_AGG : Returns the checksum of the values in a group. Null values are ignored. CHECKSUM_AGG can be used to detect changes in a table.  
+                     The same as CHECKSUM, but the primary difference is that CHECKSUM is oriented around rows,  whereas CHECKSUM_AGG is oriented around columns.
+                         
+                        Ex : CHECKSUM_AGG (expression)---------------------------------------------return type : int
+
+   9. GROUPING : It identifies the new rows with 0 and 1 resulted from rollup and cube. 
+                 0----indicates the row is actual table data.
+                 1-----indicates the new row which is generated as a result of rollup and cube.
+
+  10. STDEV : Returns the statistical standard deviation of all values in the specified expression.  Ex : STDEV ( expression)-----return type : float
+
+  11. STDEVP : Returns the statistical standard deviation for the population for all values in the specified expression. Ex : STDEVP (expression)--return type : float
+
+  12. VAR : Returns the statistical variance of all values in the specified expression. Ex : VAR ( expression)------return type : float
+
+  13. VARP : Returns the statistical variance for the population for all values in the specified expression. Ex : VARP( Expression) ------return type : float
+
+  
+34.Listout all ranking functions with examples;what is the impact of these on performance;how they treat nulls while ranking
+
+   Starting with 2012
+
+   Ranking functions return a ranking value for each row in a partition. Depending on the function that is used, some rows might receive the same value as other rows.    Ranking functions are "nondeterministic". ALL RANKING FUNCTIONS TOOK NULL VALUES INTO CONSIDERATION.
+
+   1. RANK(): Returns the rank of each row within the partition of a result set.
+
+   2. DENSE_RANK : Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
+
+   3. NTILE : Distributes the rows in an ordered partition into a specified number of groups. The groups are numbered, starting at one.
+
+   4. ROW_NUMBER() : returns the sequential number of a row within a partition of a result set, starting at 1 for the first row in each partition.
+
+     Here while dealing with RANKING FUNCTIONS, OVER CLAUSE AND ORDER BY IS MANDATORY AND PARTION BY IS OPTIONAL.
+
+   BASIC SYNTAX :
+
+                 SELECT empid, salary, ROW_NUMBER() OVER (PARTITION BY SALARY AND ORDER BY SALARY) AS [rownumber] ,
+                                       RANK() OVER (PARTITION BY SALARY AND ORDER BY SALARY) AS [rank],
+                                       DENSE_RANK() OVER (PARTITION BY SALARY AND ORDER BY SALARY) AS [dense_rank],
+                                       NTILE(3) OVER (PARTITION BY SALARY AND ORDER BY SALARY) AS [grouping]  FROM  <Table name >;
+
+   * ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING  will gives you complete total for all rows .
+   * ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW will gives you running total.
+   * RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW will gives you running total.
+
+
+35.Listout all analytical functions with examples;what is the impact of these on performance;
+ 
+   Staring with 2012
+
+    Analytic functions compute an aggregate value based on a group of rows. However, unlike aggregate functions, they can return multiple rows for each group. You can     use analytic functions to compute moving averages, running totals, percentages or top-N results within a group.
+
+   1. FIRST_VALUE(scalar expression): Returns the first value in an ordered set of values 
+                      
+   2. LAST_VALUE (scalar expression): Returns the first value in an ordered set of values 
+
+   3. LEAD : Accesses data from a subsequent row in the same result set .
+
+   4. LAG : Accesses data from a previous row in the same result set .
+
+   5. CUM_DIST() : The range of values returned by CUME_DIST is greater than 0 and less than or equal to 1. Tie values always evaluate to the same cumulative                              distribution value. NULL values are included by default and are treated as the lowest possible values.
+
+   6. PERCENTILE_CONT() : Calculates a percentile based on a continuous distribution of the column value.
+                          The percentile to compute. The value must range between 0.0 and 1.0.
+     
+                            PERCENTILE_CONT ( numeric_literal ) 
+                            WITHIN GROUP ( ORDER BY order_by_expression [ ASC | DESC ] )
+                            OVER ( [ <partition_by_clause> ] )
+
+   7. PERCENTILE_DISC() : Computes a specific percentile for sorted values in an entire rowset or within distinct partitions of a rowset
+
+                           The percentile to compute. The value must range between 0.0 and 1.0.
+     
+                            PERCENTILE_CONT ( numeric_literal ) 
+                            WITHIN GROUP ( ORDER BY order_by_expression [ ASC | DESC ] )
+                            OVER ( [ <partition_by_clause> ] )
+  
+   8. PERCENT_RANK (): Calculates the relative rank of a row within a group of rows in SQL Server 2012. Use PERCENT_RANK to evaluate the relative standing of a value                        within a query result set or partition. PERCENT_RANK is similar to the CUME_DIST function.
+                       The range of values returned by PERCENT_RANK is greater than 0 and less than or equal to 1.
+
+                             PERCENT_RANK( )  OVER ( [ partition_by_clause ] order_by_clause )
+                         
+
+36.Listout all datetime functions;what is the default datetime and what its format;how to change a date in desired format;what are all available dateformats available in sql server                         YYYY-MM-DD                                   use convert(varchar,<dateformat old>,103)
+
+    DATETIME DATA TYPES:      smalldatetime--------------------------1900-01-01 through 2079-06-06
+                            
+                              datetime-------------------------------1753-01-01 through 9999-12-31
+
+                             datetime2-------------------------------0001-01-01 00:00:00.0000000 through 9999-12-31 
+
+                              datetimeoffset------------------------0001-01-01 00:00:00.0000000 through 9999-12-31 23:59:59.9999999 (in UTC)
+
+    DATE AND TIME FUNCTIONS:
+                              Higher-Precision System Date and Time Functions
+                             
+                           1.SYSDATETIME
+                           2.SYSDATETIMEOFFSET----------timezone off set is included.
+                           3.SYSUTCDATETIME--------------(Coordinated Universal Time).
+                           
+                              Lower-Precision system Date and Time functions
+
+                           1.CURRENT_TIMESTAMP------------------------------The time zone offset is not included.
+                           2.GETDATE----------------------------------------The time zone offset is not included.
+                           3.GETUTCDATE-------------------------------------(Coordinated Universal Time).
+                           
+                              Functions that get Date and Time parts
+
+                           1.DATENAME
+                           2.DATEPART
+                           3.DAY
+                           4.MONTH
+                           5.YEAR
+
+                              Functions that get Date and Time values from their parts
+
+                            1.DATEFROMPARTS	        DATEFROMPARTS ( year, month, day )
+                            2.DATETIME2FROMPARTS	DATETIME2FROMPARTS ( year, month, day, hour, minute, seconds, fractions, precision)
+                            3.DATETIMEFROMPARTS	        DATETIMEFROMPARTS ( year, month, day, hour, minute, seconds, milliseconds)
+                            4.DATETIMEOFFSETFROMPARTS	DATETIMEOFFSETFROMPARTS ( year, month, day, hour, minute, seconds, fractions, hour_offset, minute_offset,                                                                                  precision)
+              
+                            5.SMALLDATETIMEFROMPARTS	SMALLDATETIMEFROMPARTS ( year, month, day, hour, minute )
+                            6.TIMEFROMPARTS	        TIMEFROMPARTS ( hour, minute, seconds, fractions, precision )
+
+                               Functions that get Date and Time difference
+
+                             1.DATEDIFF	                    DATEDIFF ( datepart , startdate , enddate )
+                             2.DATEDIFF_BIG	            DATEDIFF_BIG ( datepart , startdate , enddate )
+
+                                Functions that modify Date and Time values
+
+                              1.DATEADD	                    DATEADD (datepart , number , date )
+                              2.EOMONTH                	    EOMONTH ( start_date [, month_to_add ] )
+                              
+                                Functions that get or set session format
+       
+                              1.SET DATEFIRST	          SET DATEFIRST { number | @number_var }	Sets the first day of the week to a number from 1 through 7.
+
+                              2.SET DATEFORMAT	          SET DATEFORMAT { format | @format_var }	Sets the order of the dateparts (month/day/year) for entering                                                                                                           datetime or smalldatetime data.
+
+                                 Functions that validate Date and Time values
+
+                               1.ISDATE	         ISDATE ( expression ) Determines whether a datetime or smalldatetime input expression is a valid date or time value.
+
+
+    STANDARD DATETIME FORMATS:
+            
+                     — Date time formats – mssql datetime 
+— MSSQL getdate returns current system date and time in standard internal format
+SELECT convert(varchar, getdate(), 100) — mon dd yyyy hh:mmAM (or PM)
+                                        — Oct  2 2008 11:01AM          
+SELECT convert(varchar, getdate(), 101) — mm/dd/yyyy – 10/02/2008                  
+SELECT convert(varchar, getdate(), 102) — yyyy.mm.dd – 2008.10.02           
+SELECT convert(varchar, getdate(), 103) — dd/mm/yyyy
+SELECT convert(varchar, getdate(), 104) — dd.mm.yyyy
+SELECT convert(varchar, getdate(), 105) — dd-mm-yyyy
+SELECT convert(varchar, getdate(), 106) — dd mon yyyy
+SELECT convert(varchar, getdate(), 107) — mon dd, yyyy
+SELECT convert(varchar, getdate(), 108) — hh:mm:ss
+SELECT convert(varchar, getdate(), 109) — mon dd yyyy hh:mm:ss:mmmAM (or PM)
+                                        — Oct  2 2008 11:02:44:013AM   
+SELECT convert(varchar, getdate(), 110) — mm-dd-yyyy
+SELECT convert(varchar, getdate(), 111) — yyyy/mm/dd
+SELECT convert(varchar, getdate(), 112) — yyyymmdd
+SELECT convert(varchar, getdate(), 113) — dd mon yyyy hh:mm:ss:mmm
+                                        — 02 Oct 2008 11:02:07:577     
+SELECT convert(varchar, getdate(), 114) — hh:mm:ss:mmm(24h)
+SELECT convert(varchar, getdate(), 120) — yyyy-mm-dd hh:mm:ss(24h)
+SELECT convert(varchar, getdate(), 121) — yyyy-mm-dd hh:mm:ss.mmm
+SELECT convert(varchar, getdate(), 126) — yyyy-mm-ddThh:mm:ss.mmm
+                                        — 2008-10-02T10:52:47.513
+
+
+
+37.Listout all string functions with examples;how you can prepare a delimited list using a string function;split a delimited string using a string function
+                                               * ANSWER REQUIRED 
+   LIST OF STRING FUNCTIONS: LTRIM, RTRIM, CHAR, LEFT, RIGHT, REPLACE, REPLICATE, STUFF, PATINDEX, CHARINDEX, UPPER, LOWER, SUBSTRING, COALESCE, LEN, CONCAT,
+                             
+                             STRING_SPLIT, SPACE, REVERSE, DIFFERENCE, TRIM.
+ 
+                             The DIFFERENCE function compares the difference of the SOUNDEX pattern results.
+
+                               SELECT SOUNDEX('LOKESH')
+                               UNION ALL
+                               SELECT SOUNDEX('LOKES')---------------------------OUTPUT  L220------pattern recognition
+                                                                                         L220
+
+                  SELECT DIFFERENCE ('LOKE','LOKESH')-------OUTPUT 3
+
+
+
+   STRING_SPLIT(): 2016: Splits the character expression using specified separator.
+
+                    STRING_SPLIT ( string , separator )  
+
+                   EX : 				  
+                        DECLARE @LOKE VARCHAR(MAX)
+                        SET @LOKE='LOKE, MAN, POKE ,MAN ,YOU, DUMB ,ASS'
+                        SELECT VALUE FROM string_split(@LOKE,',')
+
+              OUTPUT : LOKE
+                       MAN
+                       POKE 
+                       MAN 
+                       YOU
+                       DUMB 
+                       ASS
+
+
+38.Set operators - Union vs union all vs intersect vs except with examples
+
+   UNION
+
+      It returns a union of two select statements. It is returning unique (distinct) values of them.
+
+           SELECT * FROM table1
+           UNION
+           SELECT * FROM table2;
+
+   UNION ALL
+
+     Similar to UNION just that UNION ALL returns also the duplicated values.
+
+
+
+          SELECT * FROM table1
+          UNION ALL
+          SELECT * FROM table2;
+
+   MINUS
+
+     MINUS (also known as EXCEPT) returns the difference between the first and second SELECT statement. It is the one where we need to be careful which statement will      be put first, cause we will get only those results that are in the first SELECT statement and not in the second.
+
+
+
+         SELECT * FROM table1
+         MINUS
+         SELECT * FROM table2;
+
+
+  INTERSECT
+
+      INTERSECT is opposite from MINUS as it returns us the results that are both to be found in first and second SELECT statement.
+
+
+
+        SELECT * FROM table1
+        INTERSECT
+        SELECT * FROM table2;
+
+  EXCEPT 
+      
+        EXCEPT returns any distinct values from the left query and that value should not be in right query.
+
+        SELECT * FROM table1
+        EXCEPT
+        SELECT * FROM table2;
+
+
+39.How to create a UDF;what are types of UDF's;Pros and cons;Why we need UDF
+
+   TYPES OF UDF's:
+
+    There are three types of User-Defined functions in SQL Server:
+        Scalar Function
+        Inline table valued Function
+        Multi-statement Table-valued Function
+
+
+40.How to create a USP;Pros and cons;What are the options available for procedure creation;why we need USP;UDF vs USP
+
+   Types of Stored Procedure
+
+                1.System Defined Stored Procedure
+
+                   These stored procedure are already defined in Sql Server. These are physically stored in hidden Sql Server Resource Database and logically appear in                    the sys schema of each user defined and system defined database. These procedure starts with the sp_ prefix. Hence we don't use this prefix when                    naming user-defined procedures. Here is a list of some useful system defined procedure.
+
+                2.Extended Procedure
+
+                   Extended procedures provide an interface to external programs for various maintenance activities. These extended procedures starts with the xp_                    prefix and stored in Master database. Basically these are used to call programs that reside on the server automatically from a stored procedure or a                    trigger run by the server.
+
+                3.User Defined Stored Procedure
+
+                   These procedures are created by user for own actions. These can be created in all system databases except the Resource database or in a user-defined                    database.
+
+
+
+   –> Stored Procedures (SP):
+– Can be used to read and modify data.
+– To run an SP Execute or Exec is used, cannot be used with SELECT statement.
+– Cannot JOIN a SP in a SELECT statement.
+– Can use Table Variables as well as Temporary Tables inside an SP.
+– Can create and use Dynamic SQL.
+– Can use transactions inside (BEGIN TRANSACTION, COMMIT, ROLLBACK) an SP.
+– Can use used with XML FOR clause.
+– Can use a UDF inside a SP in SELECT statement.
+– Cannot be used to create constraints while creating a table.
+– Can execute all kinds of functions, be it deterministic or non-deterministic.
+ 
+
+–> Functions (UDF):
+– Can only read data, cannot modify the database.
+– Can only be used with SELECT statement, JOINS & APPLY (CROSS & OUTER).
+– Can JOIN a UDF in a SELECT statement.
+– Cannot use a Temporary Table, only Table Variables can be used.
+– Cannot use a Dynamic SQL inside a UDF.
+– Cannot use transactions inside a UDF.
+– Cannot be used with XML FOR clause.
+– Cannot execute an SP inside a UDF.
+– Can be used to create Constraints while creating a table.
+– Cannot execute some non-deterministic built-in functions, like GETDATE().
+
+
+
+41.Why suggested to start with "usp "  instead of starting with "sp" for a stored procedure naming
+
+   
+   Here's some clarification about the sp_ prefix issue in SQL Server.
+
+          Stored procedures named with the prefix sp_ are system sprocs stored in the Master database.
+
+          If you give your sproc this prefix, SQL Server looks for them in the Master database first, then the context database, thus unnecessarily wasting resources.           And, if the user-created sproc has the same name as a system sproc, the user-created sproc won't be executed.
+
+          The sp_ prefix indicates that the sproc is accessible from all databases, but that it should be executed in the context of the current database.
+
+
+42.What are conditional structures,how many levels of nesting can be possible
+
+   Conditional structures in SQL :
+            
+               1. if
+               2. else...if
+               3. case statement
+
+   Theorytically there ia no limit for levels of nesting and it's depends on memory.
+
+
+43.What is control structure;what is its impact on the performance; when to use it
+
+  Control Structures
+
+         PL/SQL Control Structures are used to control flow of execution.  PL/SQL provides different kinds of statements to provide such type of procedural          capabilities.These statements are almost same as that of provided by other languages.
+         The flow of control statements can be classified into the following categories: 
+
+            1.Conditional Control
+            2.Iterative Control
+            3.Sequential Control
+
+   Conditional Control :
+
+     PL/SQL allows the use of an IF statement to control the execution of a block of code. 
+     In PL/SQL, the IF -THEN - ELSIF - ELSE - END IF construct in code blocks allow specifying certain conditions under which a specific block of code should be      executed. 
+               Syntax:
+
+                       IF < Condition > THEN 
+                                            < Action > 
+                       ELSIF <Condition> THEN
+                                            < Action >
+                       ELSE < Action > 
+                       END IF;
+
+  Iterative Control :
+
+      Iterative control indicates the ability to repeat or skip sections of a code block. 
+
+       Simple loop :
+
+            In simple loop, the key word loop should be placed before the first statement in the sequence and the keyword end loop should be written at the end of the             sequence to end the loop.
+
+              Syntax:
+
+                        Loop 
+                                 < Sequence of statements >
+                        End loop;        
+
+
+         WHILE loop :
+
+            The while loop executes commands in its body as long as the condtion remains true
+
+             Syntax :
+
+
+                      WHILE < condition >
+                      LOOP
+                            < Action >
+                      END LOOP
+
+         The FOR Loop:
+
+             The  FOR  loop can be used when the number of iterations to be executed are known.
+
+             Syntax :
+
+                     FOR variable IN [REVERSE] start..end 
+                     LOOP 
+                         < Action > 
+                     END LOOP;
+
+   3.Sequential Control :
+
+       The GOTO Statement
+
+         The GOTO statement changes the flow of control within a PL/SQL block. This statement allows execution of a section of code, which is not in the normal flow of          control. The entry point into such a block of code is marked using the tags «userdefined name». The GOTO statement can then make use of this user-defined name          to jump into that block of code for execution.
+
+           Syntax :
+
+                   GOTO jump;
+                    ....
+                   <<jump>>
+
+
+44.What is output clause;what are all places we can use;what is the purpose of it
+
+   OUTPUT CLAUSE: Returns information from, or expressions based on, each row affected by an INSERT, UPDATE, DELETE, or MERGE statement. These results can be returned                   to the processing application for use in such things as confirmation messages, archiving, and other such application requirements
+
+     
+   OUTPUT CLAUSE WITH "INSERT" STATEMENT:
+
+                 INSERT INTO <TABLE NAME > (ID,NAME)                       | INSERT INTO <TABLE NAME > (ID,NAME)
+                 OUTPUT INSERTED.*                                           OUTPUT INSERTED.*
+                 SELECT 101,'LOKESH'                                         VALUES(101,'LOKESH')
+
+    OUTPUT CLAUSE WITH "DELETE" STATEMENT:
+
+                 DELETE FROM <TABLE NAME >
+                 OUTPUT DELETED .*
+                 WHERE ID=101
+ 
+    OUTPUT CLAUSE WITH "UPDATE" STATEMENT:
+
+                UPDATE <TABLE NAME >
+                SET ID=101, NAME ='LOKESH'
+                OUTPUT INSERTED.*, DELETED.*
+                WHERE EMPID=10101
+
+    Store Results of an OUTPUT Clause into a Table
+
+             Inserting the data return from an OUTPUT clause into a table can be done using an OUTPUT INTO clause. Keep in mind that you first need to create the              target table which must have the same number of columns and data types that match the source table.
+
+IF OBJECT_ID('dbo.Songs_Inserted') IS NOT NULL
+DROP TABLE dbo.Songs_Inserted
+GO
+CREATE TABLE dbo.Songs_Inserted
+(
+Id int CONSTRAINT PK_Songs__Inserted_Id PRIMARY KEY,
+Name varchar(200) NOT NULL,
+Singer varchar(50) NOT NULL
+)
+GO
+
+INSERT INTO dbo.Songs ( Id, Name, Singer)
+OUTPUT Inserted.* INTO dbo.Songs_Inserted 
+VALUES (5, 'Duniya', 'Piyush Mishra');
+GO
+
+-- Result of Songs_Inserted table and base table.
+select * from dbo.Songs_Inserted;
+select * from dbo.Songs;
+GO
+
+
+      Store Results of an OUTPUT Clause into a Temporary Table
+
+           The same goes with a temporary table. Create a temporary table first, and then using an OUTPUT INTO clause, insert the data returned by the OUTPUT clause            into a temporary table.
+
+IF OBJECT_ID('tempdb..#Songs_Deleted') IS NOT NULL
+DROP TABLE dbo.#Songs_Deleted
+GO
+CREATE TABLE dbo.#Songs_Deleted
+(
+Id int,
+Name varchar(200) NOT NULL,
+Singer varchar(50) NOT NULL
+)
+GO
+
+DELETE from dbo.Songs
+OUTPUT deleted.* INTO dbo.#Songs_Deleted
+WHERE ID IN (4,5);
+GO
+
+-- Result of temporary table and base table.
+SELECT * from dbo.#Songs_Deleted;
+Select * from dbo.Songs; 
+
+
+     Store Results of an OUTPUT Clause into a Table Variable
+
+       Nothing changes for table variables as well. Declare a table variable structure the same as a source table. Do not forget to run the entire script at once so        that you can see the output inserted into a table variable.
+
+Declare @Songs_Deleted TABLE
+(
+Id int,
+Name varchar(200) NOT NULL,
+Singer varchar(50) NOT NULL
+)
+
+DELETE from dbo.Songs
+OUTPUT deleted.* INTO @Songs_Deleted
+WHERE ID IN (1,2);
+-- Result of table variable
+
+SELECT * from @Songs_Deleted;
+
+
+
+45.What is crossapply and outerapply;why we need them;why those display results like inner join and left join respectivly;when to use them;what is their impact on performance
+
+  APPLY OPEREATOR :  SQL Server 2005, is used to join a table to a table-valued function. The Table Valued Function on the right hand side of the APPLY operator gets                      called for each row from the left (also called outer table) 
+
+     1. CROSS APPLY: which is equivalent to "inner join".
+
+     2. OUTER APPLY: which is equivalent to "left join" .
+
+    
+46.What are magic table,purpose,where we can use them
+
+   1. Magic tables are nothing but inserted and deleted which are temporary objects created by the server internally to hold recently inserted values in the case of       insert and to hold recently deleted values in the case of delete, to hold before updating values or after updating values in the case of update.
+
+      Let us suppose if we write a trigger on the table on insert or delete or update. So on insertion of a record into that table, the inserted table will be created       automatically by the database, on deletion of record from that table; the deleted table will be created automatically by the database.
+
+   2. These two tables, inserted and deleted, are called magic tables.
+
+   3. Magic tables are used to put all the deleted and updated rows. We can retrieve the column values from the deleted rows using the keyword "deleted".
+
+   4. These are not physical tables, only internal tables. 
+   5. This Magic table is used In SQL Server 6.5, 7.0 & 2000 versions with Triggers only. 
+   6. But, In SQL Server 2005, 2008 & 2008 R2 Versions can use these Magic tables with Triggers and Non-Triggers also. 
+   7. Using with Triggers: 
+
+        If you have implemented any trigger for any Tables then,
+           Whenever you insert a record into a table, that record will be in the INSERTED Magic table.
+           Whenever you update the record in that table, that existing record will be in the DELETED Magic table and the modified new data with be in the INSERTED            Magic table.
+           Whenever you delete a record in that table, that record will be in the DELETED Magic table only.
+           These magic tables are used inside the Triggers for tracking the data transaction.
+
+   8. Using Non-Triggers: 
+
+        You can also use the Magic tables with Non-Trigger activities using OUTPUT Clause in SQL Server 2005, 2008 & 2008 R2 versions.
+
+   Examples :
+
+             CREATE TRIGGER <TRIGGER NAME> ON <TABLE NAME > 
+             FOR INSERT
+             AS
+             BEGIN
+             SELECT * FROM INSERTED 
+             END
+
+             CREATE TRIGGER <TRIGGER NAME> ON <TABLE NAME > 
+             FOR DELETE
+             AS
+             BEGIN
+             SELECT * FROM DELETED
+             END
+
+             CREATE TRIGGER <TRIGGER NAME> ON <TABLE NAME > 
+             FOR UPDATE
+             AS
+             BEGIN
+             SELECT * FROM INSERTED 
+             SELECT * FROM DELETED
+             END
+
+            
+47.What is dynamic sql,when to use to;what are the ways to execute a dynamic query;what is diff between the those way of execution;what things need to be taken care when you are using dynamic sql;pros and cons
+
+   Dynamic SQL is an enhanced form of Structured Query Language (SQL) that, unlike standard (or static) SQL, facilitates the automatic generation and execution of       program statements. This can be helpful when it is necessary to write code that can adjust to varying databases, conditions, or servers.
+
+
+   SQL Server offers a few ways of running a dynamically built SQL statement. These ways are:
+
+     1.Writing a query with parameters
+     2.Using EXEC
+     3.Using sp_executesql
+
+     --dynamic sql
+
+--1 .using sp_executesql 
+
+declare @columnlist nvarchar(100)
+declare @param nvarchar(100)
+declare @total_string nvarchar(max)
+set @columnlist='stid, sname,class'
+set @param ='@name  nvarchar(20)'
+set @total_string ='select ' + @columnlist + ' from [dbo].[student details] where sname=@name'
+exec sp_executesql @total_string,@param,@name='lokesh'
+
+--2. using  exec
+
+declare @columnlis varchar(100)
+declare @name varchar(20)
+declare @total_strin varchar(max)
+set @columnlis='stid, sname,class'
+set @name='''lokesh'''
+set @total_strin ='select ' + @columnlis + ' from [dbo].[student details] where sname= ' +@name
+exec (@total_strin)
+
+--3.basic way
+
+declare @name  varchar(20)
+set @name ='lokesh'
+select * from [dbo].[student details] where sname=@name
+
+                
+
+
+
+
+49.What is the scope of  local,global temp tables,phisical table  created with in the dynamic sql
+
+
+
+
+
+
+
+
+50.What is pivot and unpivot;when we need them;can we do pivot/unpivot with out aggregating any column
+
+  PIVOT rotates a table-valued expression by turning the unique values from one column in the expression into multiple columns in the output, and performs aggregations   where they are required on any remaining column values that are wanted in the final output.
+
+  UNPIVOT performs the opposite operation to PIVOT by rotating columns of a table-valued expression into column values.
+
+   For PIVOT we need aggregate function.
+
+
+
+51.What is a view;what are the options available in creating a view;when we need a view;pros and cons;when it will occupy disk space/stored at disk 
+
+   VIEW :   a view is a virtual table based on the result-set of an SQL statement. A view contains rows and columns, just like a real table. The fields in a view are             fields from one or more real tables in the database
+            views are used for row level security.
+
+             A view primarily is a simple/complex "select" statement. Essentially you use a view as a mask, and show only those column values which are of use. You use              a view with an intention to not show extra information to the end-user.
+
+
+  MATERIALIZED VIEWS: Sometimes, the execution speed of a query is so important that a developer is willing to trade increased disk space use for faster response, by                       creating a materialized view. Unlike the view discussed above, a materialized view does create and store the result table in advance, filled with                       data. The scheme of this table is given by the SELECT clause of the view definition.
+
+  OPTIONS AVAILABLE FOR VIEW:
+
+                 Generally views can be used as a virtual tables for the base tables in database system. we have few options to create a view like 
+             
+                  WITH SCHEMABINDING....to avoid ORPHAN VIEWS.
+                  WITH ENCRYPTION.......to provide data security.
+                  WITH CHECK OPTION.....to provide row level security. 
+                  
+        
+    CREATING A VIEW : CREATE VIEW <VIEW NAME >
+                      WITH SCHEMABINDING,ENCRYPTION
+                      AS 
+                      SELECT <COLUMN LIST> FROM <TABLE NAME > 
+                      WHERE <CONDITION>
+                      WITH CHECK OPTION
+
+   **General pros and cons:
+    + it could give a performance boost for really big tables.
+    + it can be created from a subset of one or many tables
+    + does not hold the data itself, therefore it does not take up much space.
+    +To speed up the slow view, you can create an indexed view on it.
+    +generally easy to change something in the query without changing the table (if you don't change the type of the fields or adding/removing fields).
+    +you select only the fields you really need, so it is possible to create good indexes on the real tables the view is using, speeding up performance.
+
+    The cons:
+
+      If you have a lot of views in your stack, and you use them frequently (views that have joins to other views), database changes can be a nightmare. Output will       change subtly, be wrong and you will have no clue or way to verify it unless you are incredibly diligent with unit testing.
+
+      Also from a performance standard, views sometimes do not take appropriate advantage of indexes and can slow down query speed significantly on large sets of data.
+
+      Pro tip: Never use a view as a join in a view.
+
+      Pro tip: Do not use a view in a join on large sets of data.
+
+      Pro tip: Do not use a wild card (*) in your views. Explicitly call out column names, this will help with performance.
+
+WILL IT OCCUPY DISK SPACE ??
+
+                Unless the view is indexed, it takes up almost no space, except for the definition of the view. The view itself is not like a table in that it                 physically stores rows in the database (unless it is an indexed view). It is only materialized (retrieves data) when it is called.
+    
+               A view in SQL is nothing but a Result Set of a stored query. This SQL query for a view is stored in the Database Dictionary. So, we don't store any data                instead a query is stored and whenever we SELECT a View the query associated with the view is executed
+
+
+52.What are the objects available in sql server;what are the physical object and logical objects 
+
+  OBJECTS AVAILABLE IN SQL SERVER ARE : Here is a list of other object types you can search for as well:
+
+AF: Aggregate function (CLR)
+C: CHECK constraint
+D: Default or DEFAULT constraint
+F: FOREIGN KEY constraint
+L: Log
+FN: Scalar function
+FS: Assembly (CLR) scalar-function
+FT: Assembly (CLR) table-valued function
+IF: In-lined table-function
+IT: Internal table
+P: Stored procedure
+PC: Assembly (CLR) stored-procedure
+PK: PRIMARY KEY constraint (type is K)
+RF: Replication filter stored procedure
+S: System table
+SN: Synonym
+SQ: Service queue
+TA: Assembly (CLR) DML trigger
+TF: Table function
+TR: SQL DML Trigger
+TT: Table type
+U: User table
+UQ: UNIQUE constraint (type is K)
+V: View
+X: Extended stored procedure
+
+53.Disply list of tables available;table info available;views info available;
+
+  SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'
+
+    To show only tables from a particular database
+      SELECT TABLE_NAME FROM <DATABASE_NAME>.INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'
+
+  SELECT * FROM sysobjects WHERE xtype='U' 
+
+  
+  select * from INFORMATION_SCHEMA.VIEWS
+  select * from sys.views 
+
+
+54.Run a statement (select/any other ) in each database in the db server
+
+   --Query Information From All Databases On A SQL Instance
+        EXEC sp_MSforeachdb 'USE ? SELECT name FROM sysobjects WHERE xtype = ''U'' ORDER BY name'
+
+----This query will return a listing of all files in all databases on a SQL instance:
+       EXEC sp_MSforeachdb 'USE ? SELECT ''?'', SF.filename, SF.size FROM sys.sysfiles SF'
+
+--Remove the USE ? clause and you end up executing the query repetitively within the context of the current database:
+       EXEC sp_MSforeachdb 'SELECT ''?'', SF.filename, SF.size FROM sys.sysfiles SF'
+
+
+55.Why we need error handling;how ro capture the multiple global variable info like @@rowcount,@@error one a time;how many catch blocks can be written for one try block;how to throw ur own error
+
+   Read the PDF ON DESKTOP
+
+
+56.What is a transaction; why,where we require them;types of transactions;what happen when rollback happen in any level of nested transaction;pros and cons
+
+   Transaction : Transactions is nothing but a set of SQL statements that will execute as a single unit or they rollback(or nothing).
+               
+                 A transaction is a single unit of work. If a transaction is successful, all of the data modifications made during the transaction are committed and                  become a permanent part of the database. If a transaction encounters errors and must be canceled or rolled back, then all of the data modifications                  are erased.(Mdocs definition)
+
+   Why we need transactions : Transaction means a logical unit of DML operations ( a set of statements into one unit is called Transaction)... 
+                              Transaction will follow ACID(Atomic Consistent Isolated Durability) properties.. 
+                              For example, 
+                            If you supposed to insert data into master and child tables in the SQL Server 
+                    Case1: During the above task you inserted one row into master table and then some error occurred then what would happen to that task? 
+                           Because of the error child data is not inserted you must rollback the master table data also; otherwise data inconsistency will cause 
+
+                    Case2: For suppose you wish to delete record from a parent/super/master table then you must delete data from child first and then from master                                  tables.. So both statements must be considered as a single unit.. At that time TRANSACTIONS will be useful 
+
+   ACID PROPERTIES THAT FOLLOW TRANSACTIONS :
+
+    A - Atomicity – A transaction must be an atomic unit of work where either all of its modifications are made, or none of them are made. 
+                    Quote: “ALL-or-NONE” / “DO-or-DIE” 
+    C - Consistency – “A completed unit of work must maintain data integrity by leaving all data in the database in a consistent state” 
+    I - Isolation – If multiple transactions executing concurrently, each transaction must execute without affecting the execution of any other concurrent                     transactions. It allows a transaction to make modifications to data without other transactions trying to modify the same data at the same time. 
+    D -Durability - “A transaction is considered to be durable when the results of the operation performed by the transaction are permanently applied within the                      database”
+
+
+    * Eveery transaction should be either COMMITTED or ROLLBACK.
+
+    COMMITT: To save or store transaction details from  logfile to datafile.
+
+    ROLLBACK : undo/ cancel the saving transactional data.
+
+    Types of transactions :
+   
+      1. AUTO COMMIT TRANSACTIONS : AUTO START , AUTO END
+
+      2. EXPLICIT TRANSACTIONS : MANUAL START , MANUAL END
+
+      3. IMPLICIT TRANSACTIONS : AUTO START , MANUAL END
+
+    OPEN TRANSACTIONS : The transactions which are started but not either COMMITTED or ROLLBACK.
+
+    The effect of open transactions : QUERY BLOCKING, to avoid QUERY BLOCKING we need LOCK HINTS.
+
+
+
+57.What are the isolation levels- explain with example;what is sql server default isolation level
+
+   * READ COMMITTED is the default isolation level for the Microsoft SQL Server Database Engine
+
+
+    We have to set these ISOLATION levels in order to avoid the EFFECTS OF DIRTY READS,LOST UPDATES ,NON REPEATABLE READS AND PHANTOM READS 
+
+     SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED | READ COMMITTED | REAPEATABLE READ | SNAPSHOT | SERIALIZABLE.
+
+                             
+                              Effects>>   DIRTY READ          LOSTUPDATE           NON REPEATABLE READS          PHANTOM READS                      
+  
+    Isolation levels 
+
+    1. READ UNCOMMITTED                     YES                   YES                   YES                         YES
+
+    2. READ COMMITTED                       NO                    YES                   YES                         YES
+
+    3. REPEATABLE READ                      NO                     NO                   NO                          YES
+ 
+    4. SNAPSHOT                             NO                     NO                   NO                          NO
+
+    5. SERIALIZABLE                         NO                     NO                   NO                          NO
+
+    Dirty read:     Session 1 begins a transaction and modifies data. Session 2 reads the modified data before Session 1 commits the transaction. Session 2 is reading                      data that exists only in theory because the Session 1 transaction might be rolled back. If that occurs, the data read by Session 2 is no longer                          valid.
+
+    Nonrepeatable read:    Session 1 begins a transaction and retrieves a row of data from a table. Session 2 updates that row. Session 1 tries to retrieve the row                            once more, still within the original transaction, but receives different results because of the Session 2 update.
+
+    Phantom read:          Session 1 begins a transaction and retrieves several rows of data from a table. Session 2 inserts a row into the same table, and the insert                            coincides with the search criteria of the Session 1 statement. When Session 1 reruns the query, the new row added by Session 2 is now                            included in the results.
+
+
+
+58.What is an index;why we need it;pros and cons;how many types of indexes are available in sqlserver and what is their purpose;how an index can be stored 
+
+   INDEX : Indexes are additional database objects which are used to PRESORT the data.
+
+           An index is used to speed up the performance of queries. It does this by reducing the number of database data pages that have to be visited/scanned. In SQL            Server, a clustered index determines the physical order of data in a table. There can be only one clustered index per table (the clustered index IS the            table).
+
+           Default sort area is MEMEORY we can also sort the index data  in TEMP DB.
+
+         The two are unrelated:
+
+                   "Unique" ensures each value occurs exactly once only
+                   "Clustered" is how the data is arranged on disk
+
+        You can have all 4 permutations:
+
+                   "unique non-clustered"
+                   "unique clustered"
+                   "non-unique non-clustered"
+                   "non-unique clustered"
+
+    Types odf indexes :
+
+    1. clustered index (upto 1 only per table ) : these indexes controls the datapages. these indexes BINDS datapages with index pages .
+                                                  Clustered Index: Clustered index defines the way in which data is ordered physically on the disk. And there can only                                                                    be one way in which you can order the data physically. Hence there can only be one clustered index                                                                    per table.
+
+                                                     CREATE CLUSTERED INDEX <CIX_EMP_TABLE> 
+                                                     ON <TABLE NAME > (COLUMN NAME )
+                                                     WITH 
+                                                     (
+                                                       SORT_IN_TEMPDB = ON
+                                                       ONLINE = ON
+                                                      )
+
+
+    2. Non clustered index (max 249 per table but after 2008 R2 increased upto 999) : these indexes REFERES to datapages and POINTS  to datapages with index pages.
+
+       2.1 Regular non clustered index :             CREATE NON CLUSTERED INDEX <CIX_EMP_TABLE> 
+                                                     ON <TABLE NAME > (COLUMN NAME )
+                                                     WITH 
+                                                     (
+                                                       SORT_IN_TEMPDB = ON
+                                                       ONLINE = ON
+                                                      )
+
+       2.2 included non clustered index :            CREATE NON CLUSTERED INDEX <CIX_EMP_TABLE> 
+                                                     ON <TABLE NAME > (COLUMN NAME )
+                                                     INCLUDE (<COLUMN 1>,<COLUMN 2>.....)
+                                                     WITH 
+                                                     (
+                                                       SORT_IN_TEMPDB = ON
+                                                       ONLINE = ON
+                                                      )
+
+       2.3 column store index :                      CREATE NON CLUSTERED INDEX <CIX_EMP_TABLE> 
+                                                     ON <TABLE NAME > (COLUMN NAME )
+                                                     INCLUDE (<COLUMN 1>,<COLUMN 2>.....)
+                                                     WITH 
+                                                     (
+                                                       SORT_IN_TEMPDB = ON
+                                                       ONLINE = ON
+                                                      )
+
+    3.  Filtered index and online index (optional indexes):         CREATE NON CLUSTERED INDEX <CIX_EMP_TABLE> 
+                                                                    ON <TABLE NAME > (COLUMN NAME )
+                                                                    WHERE EMP_ID > 2001-----------------------with filtering condition
+                                                                    WITH 
+                                                                      (
+                                                                        SORT_IN_TEMPDB = ON
+                                                                        ONLINE = ON
+                                                                       )
+
+
+        TO DISABLE INDEX : ALTER INDEX  <INDEX NAME> ON   <TABLENAME.COLUMN NAME > DISABLE 
+    
+        TO REBUILD INDEX : ALTER INDEX  <INDEX NAME>  ON   <TABLENAME.COLUMN NAME > REBUILD 
+
+59.Clustured vs non clustered vs unique index 
+
+   Unique indexes are indexes that help maintain data integrity by ensuring that no two rows of data in a table have identical key values. When you create a unique    index for an existing table with data, values in the columns or expressions that comprise the index key are checked for uniqueness.
+
+
+                        Clustered index                                                       Non clustered index
+
+     1. only one clustered index per table.                                               1. we can have max 249 NCI per table but 2008 R2 it's 999 per table.
+
+     2. sort records and store them in PHYSICAL order in the disk.                        2. do not effect the physical order but creates logical order and POINTS to
+        they create index pages and BINDS with data pages                                    data pages.
+   
+     3. data retriving is faster than non clustered index                                 3. data insertion and updation is faster than clustered 
+
+     4. do not need extra space to store the logical structure                            4. they need extra space to store the logical structure.
+
+
+
+60.What is display order of records for a select statement with out any order by used,indexes/keys defined on any column of it
+
+
+
+61.What is display order of records for a select statement with any order by used,indexes/keys defined on any column of it
+
+
+
+
+62.When to create an index on a view;what things need to be taken care to do it
+
+   This topic describes how to create an indexed view in SQL Server 2017 by using Transact-SQL. The first index created on a view must be a unique clustered index.    After the unique clustered index has been created, you can create more nonclustered indexes. Creating a unique clustered index on a view improves query performance    because the view is stored in the database in the same way a table with a clustered index is stored. The query optimizer may use indexed views to speed up the query    execution.
+
+   Index on Views
+
+      A normal view does not have any physical representation of its data in SQL Server, It stores as a just metadata information pointing to the underlying tables.          But if you created View with unique clustered index then SQL Server will physically materialize the view’s data.
+
+  Advantage of Indexed View
+
+           1.Indexed views gives great performance benefits for queries to retrieve data.
+           2.Indexed views can substantially reduce the amount of I/O required to return data
+           3.SQL Server keeps the indexed view in sync with modifications against the underlying tables. You cannot request to synchronize the view’s contents on              demand or on scheduled basis. An indexed view is just like a table index.
+
+
+   An index cannot be created on just any view. Several constraints exist that a view must meet in order for the index creation to be successful. We discussed WITH    SCHEMABINDING and two-part table names above. Here are some other constraints:
+
+      1.The view must have been created with certain SET options, such as QUOTED_IDENTIFIER and CONCAT_NULL_YIELDS_NULL set to ON.
+      2.The session creating the index must also have the correct SET options.
+      3.Any user-defined function referenced by the view must have been created using WITH SCHEMABINDING.
+      4.The view must be deterministic (consistently providing the same result given the same input).
+      5.The base tables must have been created with the proper ANSI_NULLS setting.
+      6.The result set of the view is physically stored in the database, thus storage space for the clustered index is also a constraint to consider.
+      7.In addition to this, there are constraints on the contents of the view. For instance, the view may not contain EXISTS or NOT EXISTS, OUTER JOIN, COUNT(*), MIN,         MAX, subqueries, table hints, TOP, UNION, and much more. Check the SQL Server Development Center on MSDN for a complete listing.
+
+   How to create a indexed view :
+  
+    --Set the options to support indexed views.  
+       SET NUMERIC_ROUNDABORT OFF;  
+       SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT,  
+           QUOTED_IDENTIFIER, ANSI_NULLS ON;
+
+     
+       CREATE VIEW MyView WITH SCHEMABINDING AS
+       SELECT ID, Duration
+       FROM dbo. OAGTable
+       WHERE DurationinMin > 300
+       GO
+
+       CREATE UNIQUE CLUSTERED INDEX idx_MyView ON MyView(DurationinMin)
+
+
+
+63.How Indexes can hamper the huge DML operations -  how to handle it
+
+   An INSERT will touch the clustered index, or heap, and every nonclustered index. An UPDATE will touch the clustered index, or heap, and every nonclustered index    that contains, at either the key or the leaf level, the column being updated. A DELETE will touch the clustered index, or heap, and every nonclustered index. An    exception to these statements is when a record is filtered out of the index.
+
+   A general rule of thumb is that the more indexes you have on a table, the slower INSERT, UPDATE, and DELETE operations will be. This is why adding indexes for    performance is a trade off, and must be balanced properly.
+
+
+64.How a record/row/tuple will store at disk internally-how the data can be retrived when we execute a select query
+
+
+
+65.What is a trigger;what are types of triggers available;when to use what type;pros and cons
+
+   Trigger :  A trigger is a special kind of stored procedure that automatically executes when an event occurs in the database server.
+
+   There are four types of triggers used in SQL server:
+
+             1.DDL Triggers (Data Definition Language Triggers): Users can create triggers on DDL statements like Alter, Create, Drop, etc., and stored procedures                                                                  based on a system that perform DDL operations.
+
+                                                                  CREATE TRIGGER <TRIGGER NAME > ON <TABLE NAME >
+                                                                  FOR | AFTER     CREATE_TABLE,ALTER_TABLE,DROP_TABLE,ALTER_VIEW,CREATE_PROCEDURE,CREATE_TRIGGER
+                                                                  AS 
+                                                                  BEGIN
+                                                                  <TRIGGER BODY >
+                                                                  END
+
+                    DATABASE SCOPED DDL TRIGGERS :                CREATE TRIGGER <TRIGGER NAME > ON DATABASE 
+                                                                  FOR | AFTER      CREATE_TABLE,ALTER_TABLE,DROP_TABLE,ALTER_VIEW,CREATE_PROCEDURE,CREATE_TRIGGER
+                                                                  AS 
+                                                                  BEGIN
+                                                                  <TRIGGER BODY >
+                                                                  END
+
+                    SERVER SCOPED DDL TRIGGERS :                  CREATE TRIGGER <TRIGGER NAME > ON ALL SERVER 
+                                                                  FOR | AFTER      CREATE_TABLE,ALTER_TABLE,DROP_TABLE,ALTER_VIEW,CREATE_PROCEDURE,CREATE_TRIGGER
+                                                                  AS 
+                                                                  BEGIN
+                                                                  <TRIGGER BODY >
+                                                                  END
+
+             2.DML Triggers (Data Manipulation Language Triggers) : In SQL Server we can create triggers on DML statements (like; INSERT, UPDATE, and DELETE) and                                                                     stored procedures that perform DML-like operations. DML Triggers are of two types:
+
+                                 1. After Trigger:  When execution of the action performed on SQL Server is about to finish, then this trigger is fired. For example:                                                       When a user insert record in a table, then the trigger related to this insert event will fire only after the ‘all                                                       constraints pass in the row’, like; primary key, rules, etc. If it fails then SQL Server won’t fire this trigger.
+
+                                                                   
+                                                                  CREATE TRIGGER <TRIGGER NAME > ON <TABLE NAME >
+                                                                  FOR | AFTER       INSERT, UPDATE ,DELETE
+                                                                  AS 
+                                                                  BEGIN
+                                                                  <TRIGGER BODY >
+                                                                  END
+
+
+
+
+
+
+                                2. Instead of Trigger: This trigger starts before the execution of the action performed by SQL Server. It used before the action is                                                            performed opposite to the after trigger. The user can apply Instead of clause like; update, deleted, insert                                                             triggers for a table. Actually, it doesn’t include insert and all to the table.
+
+                                                               
+                                                                   
+                                                                  CREATE TRIGGER <TRIGGER NAME > ON <TABLE NAME >
+                                                                  INSTEAD OF            INSERT, UPDATE ,DELETE
+                                                                  AS 
+                                                                  BEGIN
+                                                                  <TRIGGER BODY >
+                                                                  END
+
+
+
+             3.CLR Triggers  :  These are the special types of triggers that are based on Common Languages Runtime in .net framework. CLR is integrated with the SQL                                 Server 2008 and allows triggers to be programmed in .net languages like; VB, C# etc.
+                                User can write code for both DDL and DML triggers using CLR languages. For more on CLR triggers
+
+
+
+             4.Logon Triggers : These triggers are used when a LOGON event of the SQL Server occurs. This event gets raised when a user session is being established                                 with the SQL Server after the authentication phase has finished. All the messages defined in the trigger like; error messages will be                                 redirected to the error log of the SQL Server. If authentication fails, then the logon triggers aren’t being fired. To audit server                                 controls and server sessions like login activity, limit the no. of sessions etc., these triggers has used.
+
+                             Syntax to use The Logon Trigger
+
+                                                              Create trigger trigger_name
+                                                              On all server
+                                                              [with encryption]
+                                                              {For|after} logon
+                                                              As
+                                                              Sql_statement [1..n]
+
+                TO DISABLE THE TRIGGER : DISABLE TRIGGER <TRIGGER NAME> ON < OBJECT NAME / TABLE NAME >
+
+                TO ENABLE THE TRIGGER : ENABLE TRIGGER <TRIGGER NAME > ON <OBJECT NAME / TABLE NAME >
+
+
+
+66.Can we create a trigger by doing same operation inside the trigger;If so, what will happen - / can a trigger refer and have the same operation on the same table in     its definition -on which it has created 
+
+
+
+68.What are the ways to import and export files in sql server
+
+   There are 4 ways to import and export the files in sql server follows :
+
+     1. BCP (bulk copy program) utility------------------------------------------IMPORTING (yes) , EXPORTING (yes)
+ 
+     2. BULK INSERT--------------------------------------------------------------IMPORTING (yes) , EXPORTING (no)
+
+     3. INSERT...SELECT * FROM OPENROWSET( BULK ) STATEMENT----------------------IMPORTING (yes) , EXPORTING (no)
+
+     4. SQL SERVER IMPORT AN EXPORT WIZARD---------------------------------------IMPORTING (yes) , EXPORTING (yes)
+
+
+
+69.When to choose BCP,Bulk insert,sql cmd, xp_cmdshell ; what are they,what are the options available for each
+
+
+
+70.What are cursors; why we need it;what is alternative to it;how cursor impact the performance
+
+
+
+71.What are estimated and actual execution plans;how to see them,read and understand them
+
+
+
+72.What is tuning adviser;how to use it
+
+  Database Engine Tuning Advisor examines how queries are processed in the databases you specify, and then recommends how you can improve query processing performance   by modifying database structures such as indexes, indexed views, and partitioning
+
+
+
+
+73.What is SQL server profiler and how to use it
+
+
+
+
+
+74.How SQL Server executes the query/query execution can happen - using compiler,optimizer;query processor;query processing phases
+
+
+
+
+
+
+75.How to generate database scripts from a database
+
+  1. In Object Explorer, connect to an instance of the SQL Server Database Engine and then expand that instance.
+
+  2. Expand Databases, and then expand the category of the object. For example, expand the Tables or Views node.
+
+  3. Right-click the object, point to Script <object type> as, For example, point to Script Table as.
+
+  4. Point to the script type, such as Create to or Alter to.
+
+  5. Select the location to save the script, such as New Query Editor Window or Clipboard.
+
+
+76.How to create a user login 
+
+   1. Open SQL Server Management Studio.
+   2. Connect to the SQL Server database where you want to create a login.
+   3. Open the Security folder.
+   4. Right-click on the Logins folder and select New Login.
+   5. If you want to assign rights to a Windows account, select Windows authentication. If you want to create an account that exists only in the database, select SQL        Server authentication.
+   6. Provide the login name in the text box. You can use the Browse button to select an existing account if you chose Windows authentication.
+   7. If you chose SQL Server authentication, you must also provide a strong password in both the Password and Confirmation text boxes.
+   8. Customize the default database and language for the account, if desired, using the drop-down boxes at the bottom of the window.
+   9. Click OK to create the account.
+
+
+
+
+77.What is a linked server;How to create it; how to access the data from a linked server 
+
+    Typically linked servers are configured to enable the Database Engine to execute a Transact-SQL statement that includes tables in another instance of SQL Server,     or another database product such as Oracle. Many types OLE DB data sources can be configured as linked servers, including Microsoft Access and Excel. Linked     servers offer the following advantages:
+
+    1. The ability to access data from outside of SQL Server.
+    2. The ability to issue distributed queries, updates, commands, and transactions on heterogeneous data sources across the enterprise.
+    3. The ability to address diverse data sources similarly.
+
+
+   You can create a linked server by accessing the SSMS > ObjectExplorer > ServerObjects > LinkedServer > Right click Create New Linked Server. set properties.
+
+
+
+
+
+78.What is a sql agent;why we need it.create a job 
+
+   SQL Server Agent is a Microsoft Windows service that executes scheduled administrative tasks, which are called jobs in SQL Server 2017.
+
+   Jobs
+
+   A job is a specified series of actions that SQL Server Agent performs. Use jobs to define an administrative task that can be run one or more times and monitored for    success or failure. A job can run on one local server or on multiple remote servers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
